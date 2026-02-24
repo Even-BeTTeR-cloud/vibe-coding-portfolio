@@ -71,17 +71,25 @@ body {
 }
 
 .profile-circle {
-    width: 32px;
-    height: 32px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     overflow: hidden;
-    background-color: #eee;
+    background-color: #f0f0f0;
+    border: 2px solid #eee;
+    transition: var(--transition);
+}
+
+.profile-circle:hover {
+    border-color: var(--primary-blue);
+    transform: scale(1.1);
 }
 
 .profile-circle img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* 소형 아이콘도 스티커 전체가 보이게 */
+    padding: 2px;
 }
 
 /* Hero Section */
@@ -138,19 +146,20 @@ body {
     transform: translateX(5px);
 }
 
-/* Hero Image Section */
+/* Hero Image Section Improvement - Enlarged Owl */
 .hero-image-wrapper {
     position: relative;
-    flex: 1;
+    flex: 1.2; /* 가로 공간 더 할당 */
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
+    padding: 1rem;
 }
 
 .profile-image-container {
-    width: clamp(280px, 40vw, 450px);
-    height: clamp(280px, 40vw, 450px);
-    /* Removed border-radius and overflow:hidden to show die-cut shape */
+    width: 100%;
+    max-width: 700px; /* 500px -> 700px로 확대 */
+    height: auto;
     position: relative;
     z-index: 2;
     display: flex;
@@ -160,19 +169,25 @@ body {
 
 .profile-img {
     width: 100%;
-    height: 100%;
-    object-fit: contain; /* Changed from cover to contain to see full sticker */
-    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15)); /* More natural shadow for sticker */
+    height: auto;
+    max-height: 700px; /* 500px -> 700px로 확대 */
+    object-fit: contain;
+    filter: drop-shadow(0 40px 70px rgba(0,0,0,0.25));
+    transition: var(--transition);
+}
+
+.profile-img:hover {
+    transform: scale(1.03) rotate(-1deg);
 }
 
 .blue-crescent {
     position: absolute;
-    width: clamp(280px, 40vw, 450px);
-    height: clamp(280px, 40vw, 450px);
-    background-color: var(--primary-blue);
+    width: 600px; /* 400px -> 600px로 확대 */
+    height: 600px;
+    background: linear-gradient(135deg, var(--primary-blue), #00d4ff);
     border-radius: 50%;
-    right: -30px;
-    bottom: -30px;
+    filter: blur(100px);
+    opacity: 0.5;
     z-index: 1;
 }
 
