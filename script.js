@@ -40,14 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Teaching History Data
     const historyData = {
         'Math': [
-            'Algebra & Calculus (2020-2024)',
-            'Geometry & Trigonometry (2018-2020)',
-            'Competition Math Coaching'
+            'Algebra(2021-1R)',
+            'Calculus Ⅰ(2021-1R, 2021-2R)', 
+            'Calculus Ⅱ(2021-2R)', 
+            'Mathematics Project(2022-2R, 2023-2R)', 
+            'Probability & Statistics (2022-2R)', 'Geometry(2023-1R)', 'Advanced Math(2023-1R)'
         ],
         'Computer Science': [
-            'Python Programming Fundamentals',
-            'Algorithms & Data Structures',
-            'Web Development Workshop (HTML/CSS/JS)'
+            'Python Programming Fundamentals(2024-1R)'
         ]
     };
 
@@ -65,7 +65,17 @@ document.addEventListener('DOMContentLoaded', () => {
             historyContent.innerHTML = '';
             historyData[subject].forEach(item => {
                 const li = document.createElement('li');
-                li.innerText = item;
+                
+                // 정규표현식을 사용하여 괄호 안의 기간과 과목명을 분리
+                const match = item.match(/(.+)(\(.+\))/);
+                if (match) {
+                    const subjectName = match[1].trim();
+                    const period = match[2];
+                    li.innerHTML = `<span class="subject-name">${subjectName}</span> <span class="period">${period}</span>`;
+                } else {
+                    li.innerText = item;
+                }
+                
                 historyContent.appendChild(li);
             });
 

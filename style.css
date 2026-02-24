@@ -201,12 +201,24 @@ body {
 
 #history-content li {
     padding: 0.8rem 0;
-    color: var(--text-sub);
+    font-size: 1.05rem;
     border-bottom: 1px dashed #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#history-content li:last-child {
-    border-bottom: none;
+.subject-name {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.period {
+    color: #111111; /* 선명한 검은색 */
+    font-size: 0.95rem;
+    background: #f8f9fa;
+    padding: 2px 10px;
+    border-radius: 12px;
 }
 
 /* Hero Image Section Improvement - Enlarged Owl */
