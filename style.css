@@ -88,9 +88,9 @@ body {
 .profile-circle img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 원을 꽉 채우도록 변경 */
-    object-position: center 20%; /* 상단 얼굴 부위에 초점 맞춤 */
-    transform: scale(1.8); /* 얼굴이 크게 보이도록 확대 */
+    object-fit: cover;
+    object-position: center 10%; /* 더 위로 올려서 얼굴 중앙 배치 */
+    transform: scale(2.5); /* 더 크게 확대하여 얼굴을 꽉 채움 */
     padding: 0;
 }
 
