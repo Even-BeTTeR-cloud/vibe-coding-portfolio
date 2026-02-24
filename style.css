@@ -209,7 +209,7 @@ body {
 }
 
 .subject-name {
-    color: var(--primary-blue);
+    color: #2e7d32; /* 진한 초록색 (포레스트 그린 계열) */
     font-weight: 600;
 }
 

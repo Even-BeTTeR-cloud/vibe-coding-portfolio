@@ -67,10 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const li = document.createElement('li');
                 
                 // 정규표현식을 사용하여 괄호 안의 기간과 과목명을 분리
-                const match = item.match(/(.+)(\(.+\))/);
+                const match = item.match(/(.+)\((.+)\)/); // 괄호 내부만 캡처하도록 수정
                 if (match) {
                     const subjectName = match[1].trim();
-                    const period = match[2];
+                    const period = match[2]; // 괄호 제거된 내용
                     li.innerHTML = `<span class="subject-name">${subjectName}</span> <span class="period">${period}</span>`;
                 } else {
                     li.innerText = item;
