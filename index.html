@@ -34,10 +34,20 @@
                 Hello, my name is Even Better. I am teaching <br class="desktop-only">
                 <span class="highlight">Math & Computer Science</span> in Korean Highschool.
             </p>
-            <ul class="skills-list">
-                <li>Math</li>
-                <li>Computer Science</li>
-            </ul>
+            <div class="skills-buttons">
+                <button class="history-btn" data-subject="Math">Math</button>
+                <button class="history-btn" data-subject="Computer Science">Computer Science</button>
+            </div>
+
+            <div id="teaching-history" class="history-panel">
+                <div class="history-header">
+                    <h3 id="history-title">Teaching History</h3>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <ul id="history-content">
+                    <!-- Content will be injected by JavaScript -->
+                </ul>
+            </div>
         </div>
         <div class="hero-image-wrapper">
             <div class="blue-crescent"></div>

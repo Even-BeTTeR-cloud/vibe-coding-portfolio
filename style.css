@@ -130,23 +130,83 @@ body {
     font-weight: 600;
 }
 
-.skills-list {
-    list-style: none;
-    color: var(--text-sub);
-    font-size: 1.1rem;
+.skills-buttons {
     display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
-.skills-list li {
+.history-btn {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-family: inherit;
+    font-size: 1.1rem;
+    color: var(--text-sub);
+    cursor: pointer;
     transition: var(--transition);
-    cursor: default;
 }
 
-.skills-list li:hover {
-    color: var(--text-main);
-    transform: translateX(5px);
+.history-btn:hover {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,98,255,0.1);
+}
+
+/* History Panel Styling */
+.history-panel {
+    display: none;
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+    border: 1px solid #eee;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.history-header h3 {
+    color: var(--primary-blue);
+    font-size: 1.4rem;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #ccc;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: #ff4444;
+}
+
+#history-content {
+    list-style: none;
+    text-align: left;
+}
+
+#history-content li {
+    padding: 0.8rem 0;
+    color: var(--text-sub);
+    border-bottom: 1px dashed #eee;
+}
+
+#history-content li:last-child {
+    border-bottom: none;
 }
 
 /* Hero Image Section Improvement - Enlarged Owl */

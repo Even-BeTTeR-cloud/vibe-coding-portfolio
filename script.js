@@ -37,15 +37,44 @@ document.addEventListener('DOMContentLoaded', () => {
         blueCrescent.style.transform = 'translate(0, 0)';
     });
 
-    // Skills list interaction
-    const skills = document.querySelectorAll('.skills-list li');
-    skills.forEach(skill => {
-        skill.addEventListener('mouseenter', () => {
-            skill.style.color = '#0062ff';
+    // Teaching History Data
+    const historyData = {
+        'Math': [
+            'Algebra & Calculus (2020-2024)',
+            'Geometry & Trigonometry (2018-2020)',
+            'Competition Math Coaching'
+        ],
+        'Computer Science': [
+            'Python Programming Fundamentals',
+            'Algorithms & Data Structures',
+            'Web Development Workshop (HTML/CSS/JS)'
+        ]
+    };
+
+    const historyPanel = document.getElementById('teaching-history');
+    const historyTitle = document.getElementById('history-title');
+    const historyContent = document.getElementById('history-content');
+    const closeBtn = document.querySelector('.close-btn');
+
+    document.querySelectorAll('.history-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const subject = btn.getAttribute('data-subject');
+            historyTitle.innerText = `${subject} Teaching History`;
+            
+            // Clear and fill content
+            historyContent.innerHTML = '';
+            historyData[subject].forEach(item => {
+                const li = document.createElement('li');
+                li.innerText = item;
+                historyContent.appendChild(li);
+            });
+
+            historyPanel.style.display = 'block';
         });
-        skill.addEventListener('mouseleave', () => {
-            skill.style.color = '#777777';
-        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        historyPanel.style.display = 'none';
     });
 
     console.log('Portfolio initialized successfully.');
