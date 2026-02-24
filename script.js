@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'Probability & Statistics (2022-2R)', 'Geometry(2023-1R)', 'Advanced Math(2023-1R)'
         ],
         'Computer Science': [
-            'Python Programming Fundamentals(2024-1R)'
+            'Python Programming Fundamentals(2024-1R)', 'Artifial Intelligence(2024-2R)'
         ]
     };
 

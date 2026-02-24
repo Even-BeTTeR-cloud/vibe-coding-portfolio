@@ -274,7 +274,27 @@ body {
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .hero {
+        padding: 2rem 5%;
+        gap: 2rem;
+    }
+    
+    .profile-image-container {
+        max-width: 450px; /* 웅장한 올빼미를 화면 크기에 맞춰 축소 */
+    }
+    
+    .blue-crescent {
+        width: 400px;
+        height: 400px;
+    }
+}
+
 @media (max-width: 1024px) {
+    .name {
+        font-size: 4rem;
+    }
+    
     .hero {
         padding: 2rem 5%;
     }
