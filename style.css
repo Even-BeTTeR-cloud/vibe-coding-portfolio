@@ -109,6 +109,8 @@ body {
 .hero-content {
     flex: 1;
     max-width: 600px;
+    position: relative;
+    z-index: 10; /* 올빼미와 후광보다 앞서도록 설정 */
 }
 
 .name {
@@ -265,7 +267,8 @@ body {
     border-radius: 50%;
     filter: blur(100px);
     opacity: 0.5;
-    z-index: 1;
+    z-index: -1; /* 가장 뒤로 배치 */
+    pointer-events: none; /* 텍스트 선택이나 클릭을 방해하지 않도록 설정 */
 }
 
 /* Desktop Only Helper */
